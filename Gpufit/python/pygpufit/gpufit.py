@@ -60,6 +60,9 @@ class ModelID:
     SPLINE_3D = 10
     SPLINE_3D_MULTICHANNEL = 11
     SPLINE_3D_PHASE_MULTICHANNEL = 12
+    ESR14N = 13
+    ESR15N = 14
+    ESRSINGLE= 15
 
 
 class EstimatorID:
