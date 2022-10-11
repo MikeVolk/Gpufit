@@ -15,6 +15,9 @@
 #include "spline_3d.cuh"
 #include "spline_3d_multichannel.cuh"
 #include "spline_3d_phase_multichannel.cuh"
+#include "esr14N.cuh"
+#include "esr15N.cuh"
+#include "esrsingle.cuh"
 
 __device__ void calculate_model(
     ModelID const model_id,
@@ -70,6 +73,15 @@ __device__ void calculate_model(
     case SPLINE_3D_PHASE_MULTICHANNEL:
         calculate_spline3d_phase_multichannel(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
         break;
+    case ESR14N:
+        calculate_esr3rt(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
+        break;
+    case ESR15N:
+        calculate_esr15n(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
+        break;
+    case ESRSINGLE:
+        calculate_esrsingle(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
+        break;    
     default:
         assert(0); // unknown model ID
     }
@@ -92,6 +104,9 @@ void configure_model(ModelID const model_id, int & n_parameters, int & n_dimensi
     case SPLINE_3D:             n_parameters = 5; n_dimensions = 3; break;
     case SPLINE_3D_MULTICHANNEL:         n_parameters = 5; n_dimensions = 4; break;
     case SPLINE_3D_PHASE_MULTICHANNEL:   n_parameters = 6; n_dimensions = 4; break;
+    case ESR14N:                n_parameters = 6; n_dimensions = 1; break;
+    case ESR15N:                n_parameters = 5; n_dimensions = 1; break;
+    case ESRSINGLE:             n_parameters = 4; n_dimensions = 1; break;
     default: throw std::runtime_error("unknown model ID");
     }
 }
