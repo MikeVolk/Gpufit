@@ -1,7 +1,7 @@
 #ifndef HYPERFINE_CUH_INCLUDED
 #define HYPERFINE_CUH_INCLUDED
-
-/* Description of the calculate_superposed_doublet function
+#include <cuda/stddef.h>
+/* Description of the calculate_hyperfine function
  * =========================================================
  *
  * This function calculates the values of the superposition of two doublets,
@@ -39,14 +39,14 @@
  *
  * user_info_size: The size of user_info in bytes.
  *
- * Calling the calculate_superposed_doublet function
+ * Calling the calculate_hyperfine function
  * =================================================
  *
  * This __device__ function can be only called from a __global__ function or another
  * __device__ function.
  *
  */
-__device__ void calculate_superposed_doublet(
+__device__ void calculate_hyperfine(
     float const *parameters,
     int const n_fits,
     int const n_points,
@@ -56,7 +56,7 @@ __device__ void calculate_superposed_doublet(
     int const fit_index,
     int const chunk_index,
     char *user_info,
-    std::size_t const user_info_size)
+    size_t const user_info_size)
 {
     // INDICES
 
