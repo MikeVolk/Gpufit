@@ -1,6 +1,5 @@
 #ifndef HYPERFINE_CUH_INCLUDED
 #define HYPERFINE_CUH_INCLUDED
-#include <cuda/stddef.h>
 
 /* Description of the calculate_superposed_doublet function
  * =========================================================
@@ -57,7 +56,7 @@ __device__ void calculate_superposed_doublet(
     int const fit_index,
     int const chunk_index,
     char *user_info,
-    size_t const user_info_size)
+    std::size_t const user_info_size)
 {
     // INDICES
 
