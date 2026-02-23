@@ -15,10 +15,10 @@ jobs:
           - os: windows-2022
             cuda: "12.4.0"
             visual_studio: "Visual Studio 17 2022"
-            python: "3.11"
+            python: "3.12"
           - os: ubuntu-22.04
             cuda: "12.4.0"
-            python: "3.11"
+            python: "3.12"
 
     env:
       build_dir: "build"
