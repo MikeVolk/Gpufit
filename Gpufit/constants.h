@@ -18,11 +18,12 @@ enum ModelID
     SPLINE_3D = 10,
     SPLINE_3D_MULTICHANNEL = 11,
     SPLINE_3D_PHASE_MULTICHANNEL = 12,
-    ESR14N = 13,
-    ESR15N = 14,
-    ESRSINGLE = 15,
-    HYPERFINE = 16,
-
+    SPLINE_4D = 13,
+    SPLINE_5D = 14,
+    ESR14N = 15,
+    ESR15N = 16,
+    ESRSINGLE = 17,
+    HYPERFINE = 18
 };
 
 // estimator ID

@@ -25,7 +25,7 @@ jobs:
       config: "Release"
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Cache build
         uses: actions/cache@v3
@@ -113,14 +113,14 @@ jobs:
         run: make
 
       - name: Upload Artifacts (Windows)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: runner.os == 'Windows'
         with:
           name: ${{ matrix.os }}-x64-cuda-${{ matrix.cuda }}
           path: build/Release/**/*
 
       - name: Upload Artifacts (Linux)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: runner.os == 'Linux'
         with:
           name: ${{ matrix.os }}-x64-cuda-${{ matrix.cuda }}
