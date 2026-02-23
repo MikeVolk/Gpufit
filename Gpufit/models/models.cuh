@@ -103,7 +103,6 @@ void configure_model(ModelID const model_id, int &n_parameters, int &n_dimension
 {
     switch (model_id)
     {
-<<<<<<< HEAD
     case GAUSS_1D:
         n_parameters = 4;
         n_dimensions = 1;
